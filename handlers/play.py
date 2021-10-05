@@ -45,7 +45,7 @@ import wget
 chat_id = None
 
 
-JOIN_ASAP = "<b>You Need To Join @Denvil_bots For Executing This Command...</b>"
+JOIN_ASAP = "<b>You Need To Join @Aniebots For Executing This Command...</b>"
 
 BOT_BUTTONS = InlineKeyboardMarkup(
         [[
