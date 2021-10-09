@@ -131,7 +131,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
  
 
 @Client.on_message(
-    filters.command("playlist")
+    filters.command("playlist2")
     & filters.group
     & ~ filters.edited
 )
@@ -206,7 +206,7 @@ def r_ply(type_):
     return mar
 
 @Client.on_message(
-    filters.command("current")
+    filters.command("current2")
     & filters.group
     & ~ filters.edited
 )
@@ -224,7 +224,7 @@ async def ee(client, message):
         await message.reply('No VoiceChat instances running in this chat')
 
 @Client.on_message(
-    filters.command("player")
+    filters.command("player2")
     & filters.group
     & ~ filters.edited
 )
@@ -281,7 +281,7 @@ async def p_cb(b, cb):
                  msg += f'\n- Req by {usr}\n'
         await cb.message.edit(msg)      
 
-@Client.on_callback_query(filters.regex(pattern=r'^(play|pause|skip|leave|puse|resume|menu|cls)$'))
+@Client.on_callback_query(filters.regex(pattern=r'^(play2|pause2|skip2|leave2|puse2|resume2|menu|cls)$'))
 @cb_admin_check
 async def m_cb(b, cb):
     global que    
@@ -421,7 +421,7 @@ async def m_cb(b, cb):
         else:
             await cb.answer('Chat is not connected!', show_alert=True)
 
-@Client.on_message(command("play") & other_filters)
+@Client.on_message(command("play2") & other_filters)
 async def play(_, message: Message):
     try:
         await message._client.get_chat_member(int("-1001543923735"), message.from_user.id)
