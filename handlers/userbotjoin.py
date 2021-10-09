@@ -6,7 +6,7 @@ from config import BOT_USERNAME
 from pyrogram.errors import UserAlreadyParticipant
 from helpers.decorators import errors, authorized_users_only
 
-@Client.on_message(filters.group & filters.command(["userbotjoin"]))
+@Client.on_message(filters.group & filters.command(["userbotjoin2"]))
 @authorized_users_only
 @errors
 async def addchannel(client, message):
@@ -43,7 +43,7 @@ async def addchannel(client, message):
             "<b>helper userbot joined your chat</b>",
         )
     
-@USER.on_message(filters.group & filters.command(["userbotleave"]))
+@USER.on_message(filters.group & filters.command(["userbotleave2"]))
 async def rem(USER, message):
     try:
         await USER.leave_chat(message.chat.id)
